@@ -10,8 +10,8 @@ export class PipelineStack extends cdk.Stack {
     super(scope, id, props);
 
     // GitHub repository details
-    const owner = node.;
-    const repo = 'your-repo-name';
+    const owner = this.node.tryGetContext('OWNER');
+    const repo = this.node.tryGetContext('REPO');
     const branch = 'main'; // or the branch you want to use
 
     // Create the CodePipeline
